@@ -77,3 +77,7 @@ D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\obj\Debug\W
 D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.csproj.CopyComplete
 D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.dll
 D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\obj\Debug\WebsiteBanHang.pdb
+D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\EntityFramework.dll
+D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\EntityFramework.SqlServer.dll
+D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\EntityFramework.xml
+D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\EntityFramework.SqlServer.xml
