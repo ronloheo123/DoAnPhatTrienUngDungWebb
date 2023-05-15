@@ -79,7 +79,7 @@ INSERT INTO Product VALUES
 ('SamSung 3','iphone12.jpg',1,N'mô tả ngắn',N'mô tả dài',6000000,5000000,1,'iphone6',1,0,1,1,NULL,NULL),
 ('SamSung 4','iphone12.jpg',1,N'mô tả ngắn',N'mô tả dài',6000000,5000000,1,'iphone6',1,0,1,1,NULL,NULL)
 UPDATE Product
-SET Avatar = 'samsung.jpg'
+SET BrandId = '2'
 WHERE ID = 7;
 
 
