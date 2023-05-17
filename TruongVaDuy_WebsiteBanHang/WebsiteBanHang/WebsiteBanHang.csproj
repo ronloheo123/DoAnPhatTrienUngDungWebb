@@ -168,7 +168,6 @@
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListingGridController.cs" />
-    <Compile Include="Controllers\ListingLargeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserLoginController.cs" />
@@ -2102,6 +2101,12 @@
     <Content Include="Content\images\banners\slide1.jpg" />
     <Content Include="Content\images\banners\slide2.jpg" />
     <Content Include="Content\images\banners\slide3.jpg" />
+    <Content Include="Content\images\category\donghothoitrang.jpg" />
+    <Content Include="Content\images\category\donghothongminh.jpg" />
+    <Content Include="Content\images\category\Ipad.jpg" />
+    <Content Include="Content\images\category\Laptop.jpg" />
+    <Content Include="Content\images\category\Phone.jpg" />
+    <Content Include="Content\images\category\PhuKien.jpg" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\icons\flags\AU%402x.png" />
     <Content Include="Content\images\icons\flags\AU.png" />
@@ -2301,15 +2306,15 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
-    <Content Include="Views\Category\Category.cshtml" />
     <Content Include="Views\BankStart\BankStart.cshtml" />
     <Content Include="Views\Component\Component.cshtml" />
     <Content Include="Views\Content\Content.cshtml" />
     <Content Include="Views\ListingGrid\ListingGrid.cshtml" />
-    <Content Include="Views\ListingLarge\ListingLarge.cshtml" />
     <Content Include="Views\ShoppingCart\ShoppingCart.cshtml" />
     <Content Include="Views\UserLogin\UserLogin.cshtml" />
     <Content Include="Views\UserRegister\UserRegister.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\ProductCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
