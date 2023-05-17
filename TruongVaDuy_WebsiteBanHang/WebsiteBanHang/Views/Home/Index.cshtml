@@ -16,8 +16,7 @@
                             <ul class="menu-category">
                                 @foreach (var item in Model.ListCategory)
                                 {
-                                    <li>
-                                       
+                                    <li>                                    
                                         @Html.ActionLink(item.Name, "ProductCategory", "Category", new {@Id=item.Id},null)
                                     </li>
                                 }
