@@ -73,11 +73,27 @@ namespace WebsiteBanHang.Controllers
                 var data = objWebsiteBanHangEntities.Users.Where(s => s.Email.Equals(email) && s.Password.Equals(f_password)).ToList();
                 if (data.Count() > 0)
                 {
-                    //add session
-                    Session["FullName"] = data.FirstOrDefault().FristName + " " + data.FirstOrDefault().LastName;
-                    Session["Email"] = data.FirstOrDefault().Email;
-                    Session["idUser"] = data.FirstOrDefault().Id;
-                    return RedirectToAction("Index");
+                    if (data.FirstOrDefault().IsAdmin==true)
+                    {
+                        // add session for admin
+                        Session["FullName"] = data.FirstOrDefault().FristName + " " + data.FirstOrDefault().LastName;
+                        Session["Email"] = data.FirstOrDefault().Email;
+                        Session["idUser"] = data.FirstOrDefault().Id;
+
+                        return RedirectToAction("Index", "Product", new { area = "Admin" });
+
+
+                        // redirect to admin page
+                    }
+                    else
+                    {
+                        // add session for regular user
+                        Session["FullName"] = data.FirstOrDefault().FristName + " " + data.FirstOrDefault().LastName;
+                        Session["Email"] = data.FirstOrDefault().Email;
+                        Session["idUser"] = data.FirstOrDefault().Id;
+
+                        return RedirectToAction("Index"); // redirect to regular user page
+                    }
                 }
                 else
                 {
@@ -86,6 +102,7 @@ namespace WebsiteBanHang.Controllers
                 }
             }
             return View();
+
         }
         public ActionResult Logout()
         {
