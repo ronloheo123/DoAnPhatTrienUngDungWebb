@@ -133,6 +133,7 @@
     <Compile Include="Areas\Admin\Controllers\Home2Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\Home3Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Product1Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Context\Brand.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
@@ -178,6 +179,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\PartialMetadataType.cs" />
+    <Compile Include="Models\ProductMasterData.cs" />
+    <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2284,6 +2288,9 @@
     <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product1\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product1\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product1\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
