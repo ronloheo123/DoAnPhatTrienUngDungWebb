@@ -8,7 +8,7 @@ using System.Web;
 namespace WebsiteBanHang.Models
 {
     [MetadataType(typeof(UserMasterData))]
-    public class User
+    public partial class User
     {
     
     }
@@ -16,8 +16,6 @@ namespace WebsiteBanHang.Models
     [MetadataType(typeof(UserMasterData))]
     public partial class ProductMasterData
     {
-
-
         [NotMapped]
         public System.Web.HttpPostedFileBase ImaUpload { get; set; }
     }

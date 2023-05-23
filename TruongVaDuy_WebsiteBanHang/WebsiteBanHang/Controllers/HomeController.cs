@@ -30,7 +30,7 @@ namespace WebsiteBanHang.Controllers
         //POST: Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(User _user)
+        public ActionResult Register(WebsiteBanHang.Context.User _user)
         {
             if (ModelState.IsValid)
             {
