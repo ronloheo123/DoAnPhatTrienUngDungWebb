@@ -17,6 +17,6 @@ namespace WebsiteBanHang.Models
     public partial class ProductMasterData
     {
         [NotMapped]
-        public System.Web.HttpPostedFileBase ImaUpload { get; set; }
+        public System.Web.HttpPostedFileBase ImageUpload { get; set; }
     }
 }

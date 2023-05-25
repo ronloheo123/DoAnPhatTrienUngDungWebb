@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebsiteBanHang.Context;
+using WebsiteBanHang.Models;
+using static WebsiteBanHang.Models.Common;
 
 namespace WebsiteBanHang.Areas.Admin.Controllers
 {
@@ -24,12 +28,53 @@ namespace WebsiteBanHang.Areas.Admin.Controllers
         [HttpGet]
         public  ActionResult Create()
         {
-           return View();
+            Common objCommon =new Common();
+           //lấy dữ liệu danh mục dưới DB
+           var lstCat=objWebsiteBanHangEntities.Categories.ToList();
+            //Convert sang select list dạng value ,text
+            ListtoDataTableConverter converter = new ListtoDataTableConverter();
+            DataTable dtCategory = converter.ToDataTable(lstCat);
+            ViewBag.ListCategory = objCommon.ToSelectList(dtCategory, "Id", "Name");
+
+
+            //lấy dữ liệu thương hiệu dưới DB
+            var lstBrand= objWebsiteBanHangEntities.Brands.ToList();
+            DataTable dtBrand= converter.ToDataTable(lstBrand);
+            //convert sang  select list  dạng value ,text
+            ViewBag.ListBrand = objCommon.ToSelectList(dtBrand, "Id", "Name");
+            return View();
+
+
         }
         [HttpPost]
-        public ActionResult Create(Product product)
+        public ActionResult Create(Product objProduct)
         {
-            return View();
+            if(ModelState .IsValid)
+            {
+                try
+                {
+                    if(objProduct.ImageUpload!=null)
+                    {
+                        string filename = Path.GetFileNameWithoutExtension(objProduct.ImageUpload.FileName);
+                        //tenhinh
+                        string extension = Path.GetExtension(objProduct.ImageUpload.FileName);
+                        //png
+                        filename = filename + extension;
+                        //tenhinh.png
+                        objProduct.Avatar = filename;
+                        objProduct.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/items"), filename));
+                    }
+                    objProduct.CreatedOnUtc = DateTime.Now;
+                    objWebsiteBanHangEntities.Products.Add(objProduct);
+                    objWebsiteBanHangEntities.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    return View();
+                }
+            }
+            return View(objProduct);
         }
     }
 }
