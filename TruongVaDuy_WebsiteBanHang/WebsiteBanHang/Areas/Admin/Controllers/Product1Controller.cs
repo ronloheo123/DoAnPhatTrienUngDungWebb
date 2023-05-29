@@ -42,6 +42,23 @@ namespace WebsiteBanHang.Areas.Admin.Controllers
             DataTable dtBrand= converter.ToDataTable(lstBrand);
             //convert sang  select list  dạng value ,text
             ViewBag.ListBrand = objCommon.ToSelectList(dtBrand, "Id", "Name");
+
+            //loại sản phẩm
+            List<ProductType> lstProductType = new List<ProductType>();
+            ProductType objProductType = new ProductType();
+            objProductType.Id = 01;
+            objProductType.Name = "Giảm giá sốc";
+            lstProductType.Add(objProductType);
+
+            objProductType = new ProductType();
+            objProductType.Id = 02;
+            objProductType.Name = "Đề xuất";
+            lstProductType.Add(objProductType);
+
+            DataTable dtProductType = converter.ToDataTable(lstProductType);
+            //convert sang  select list  dạng value ,text
+            ViewBag.ProductType = objCommon.ToSelectList(dtProductType, "Id", "Name");
+
             return View();
 
 
