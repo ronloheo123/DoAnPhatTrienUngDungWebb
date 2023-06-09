@@ -134,7 +134,7 @@
 
     </dl>
 
-    @using (Html.BeginForm("Delete", "Product", FormMethod.Post, new {enctype="multipart/form-data"})) {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

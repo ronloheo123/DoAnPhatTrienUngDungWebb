@@ -133,7 +133,6 @@
     <Compile Include="Areas\Admin\Controllers\Home2Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\Home3Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\Product1Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Context\Brand.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
@@ -2284,14 +2283,8 @@
     <Content Include="Context\dbModel.edmx.diagram">
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Product1\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Product1\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Product1\Create.cshtml" />
     <Content Include="Scripts\ckeditor\bender-runner.config.json" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
@@ -2308,6 +2301,9 @@
     <Content Include="Scripts\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Scripts\ckeditor\SECURITY.md" />
     <Content Include="Scripts\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
