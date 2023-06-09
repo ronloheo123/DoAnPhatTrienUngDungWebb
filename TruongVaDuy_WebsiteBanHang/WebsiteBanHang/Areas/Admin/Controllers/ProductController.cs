@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using WebsiteBanHang.Context;
 using static WebsiteBanHang.Models.Common;
 using WebsiteBanHang.Models;
+using PagedList;
 
 namespace WebsiteBanHang.Areas.Admin.Controllers
 {
@@ -15,11 +16,36 @@ namespace WebsiteBanHang.Areas.Admin.Controllers
     {
         WebsiteBanHangEntities objWebsiteBanHangEntities = new WebsiteBanHangEntities();
         // GET: Admin/Product
-        public ActionResult Index()
-        {   
-            var lstProduct= objWebsiteBanHangEntities.Products.ToList();
-            return View(lstProduct);
+        public ActionResult Index(string currentFilter, string searchString, int? page)
+        {
+            var lstProduct = new List<Product>();
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                //lấy ds sản phẩm theo từ khóa tìm kiếm
+                lstProduct = objWebsiteBanHangEntities.Products.Where(n => n.Name.Contains(searchString)).ToList();
+            }
+            else
+            {
+                //lấy all sản phẩm  trong bản Product
+                lstProduct = objWebsiteBanHangEntities.Products.ToList();
+            }
+            ViewBag.CurrentFilter = searchString;
+            //số lượng item của  1 trang =4;
+            int pageSize = 4;
+            int pageNumber = (page ?? 1);
+            //sắp xếp theo id sản phẩm, sp mới đưa lên đầu
+            lstProduct = lstProduct.OrderByDescending(n => n.Id).ToList();
+            return View(lstProduct.ToPagedList(pageNumber, pageSize));
         }
+
         [HttpGet]
         public ActionResult Create()
         {
@@ -132,5 +158,7 @@ namespace WebsiteBanHang.Areas.Admin.Controllers
             objWebsiteBanHangEntities.SaveChanges();
             return RedirectToAction("Index");
         }
+       
     }
 }
+

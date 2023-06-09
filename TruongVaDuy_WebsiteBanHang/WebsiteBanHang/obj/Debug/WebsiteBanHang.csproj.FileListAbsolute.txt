@@ -81,3 +81,7 @@ D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\EntityF
 D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\EntityFramework.SqlServer.dll
 D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\EntityFramework.xml
 D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\EntityFramework.SqlServer.xml
+D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\PagedList.dll
+D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\PagedList.Mvc.dll
+D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\PagedList.xml
+D:\DoAnPhatTrienUngDungWeb\TruongVaDuy_WebsiteBanHang\WebsiteBanHang\bin\PagedList.Mvc.xml
