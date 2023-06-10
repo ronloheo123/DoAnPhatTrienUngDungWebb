@@ -28,14 +28,22 @@
     <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
     <Property Name="UpdateOnUtc" Type="DateTime" Precision="3" />
   </EntityType>
+  <EntityType Name="OderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OderId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+  </EntityType>
   <EntityType Name="Order">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="ProductId" Type="Int32" />
-    <Property Name="Price" Type="Double" />
+    <Property Name="UserId" Type="Int32" />
     <Property Name="Status" Type="Int32" />
     <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
   </EntityType>
@@ -74,6 +82,7 @@
   <EntityContainer Name="WebsiteBanHangEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Brands" EntityType="Self.Brand" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="OderDetails" EntityType="Self.OderDetail" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="Users" EntityType="Self.User" />

@@ -14,6 +14,7 @@ namespace WebsiteBanHang.Context
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+
     public partial class Product
     {
         public int Id { get; set; }

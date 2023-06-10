@@ -33,14 +33,22 @@
           <Property Name="CreatedOnUtc" Type="datetime" />
           <Property Name="UpdateOnUtc" Type="datetime" />
         </EntityType>
+        <EntityType Name="OderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OderId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Quantity" Type="int" />
+        </EntityType>
         <EntityType Name="Orders">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="ProductId" Type="int" />
-          <Property Name="Price" Type="float" />
+          <Property Name="UserId" Type="int" />
           <Property Name="Status" Type="int" />
           <Property Name="CreatedOnUtc" Type="datetime" />
         </EntityType>
@@ -79,6 +87,7 @@
         <EntityContainer Name="WebsiteBanHangModelStoreContainer">
           <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OderDetail" EntityType="Self.OderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -116,14 +125,22 @@
           <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
           <Property Name="UpdateOnUtc" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="OderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OderId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+        </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ProductId" Type="Int32" />
-          <Property Name="Price" Type="Double" />
+          <Property Name="UserId" Type="Int32" />
           <Property Name="Status" Type="Int32" />
           <Property Name="CreatedOnUtc" Type="DateTime" Precision="3" />
         </EntityType>
@@ -162,6 +179,7 @@
         <EntityContainer Name="WebsiteBanHangEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Brands" EntityType="Self.Brand" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="OderDetails" EntityType="Self.OderDetail" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="Products" EntityType="Self.Product" />
           <EntitySet Name="Users" EntityType="Self.User" />
@@ -202,13 +220,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="OderDetails">
+            <EntityTypeMapping TypeName="WebsiteBanHangModel.OderDetail">
+              <MappingFragment StoreEntitySet="OderDetail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OderId" ColumnName="OderId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="WebsiteBanHangModel.Order">
               <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
               </MappingFragment>

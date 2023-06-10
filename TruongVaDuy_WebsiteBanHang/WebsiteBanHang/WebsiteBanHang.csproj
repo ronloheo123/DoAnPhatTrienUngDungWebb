@@ -161,6 +161,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Context\OderDetail.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\Order.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
@@ -171,19 +174,21 @@
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BankStartController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ComponentController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListingGridController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserLoginController.cs" />
     <Compile Include="Controllers\UserRegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Common.cs" />
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\PartialMetadataType.cs" />
     <Compile Include="Models\ProductMasterData.cs" />
@@ -2173,8 +2178,8 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Context\dbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>dbModel.Context.cs</LastGenOutput>
       <DependentUpon>dbModel.edmx</DependentUpon>
+      <LastGenOutput>dbModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Context\dbModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2283,13 +2288,6 @@
     <Content Include="Areas\Admin\Views\Home2\Index2.cshtml" />
     <Content Include="Areas\Admin\Views\Home3\Index3.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <EntityDeploy Include="Context\dbModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Context\dbModel.edmx.diagram">
-      <DependentUpon>dbModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <Content Include="Scripts\ckeditor\bender-runner.config.json" />
@@ -2311,6 +2309,13 @@
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <EntityDeploy Include="Context\dbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Context\dbModel.edmx.diagram">
+      <DependentUpon>dbModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />
@@ -2655,13 +2660,14 @@
     <Content Include="Views\Component\Component.cshtml" />
     <Content Include="Views\Content\Content.cshtml" />
     <Content Include="Views\ListingGrid\ListingGrid.cshtml" />
-    <Content Include="Views\ShoppingCart\ShoppingCart.cshtml" />
     <Content Include="Views\UserLogin\UserLogin.cshtml" />
     <Content Include="Views\UserRegister\UserRegister.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\ProductCategory.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Payment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

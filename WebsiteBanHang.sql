@@ -42,8 +42,7 @@ Create Table Orders
 (
 	Id int identity(1,1) Primary Key,
 	Name nvarchar(100),
-	ProductId int,
-	Price float,
+	UserId int,
 	Status int,
 	CreatedOnUtc datetime
 )
@@ -97,4 +96,11 @@ Create Table Users
 	Email varchar(50),
 	Password varchar(50),
 	IsAdmin bit
+)
+Create Table OderDetail
+(
+	Id int identity(1,1) Primary key,
+	OderId int,
+	ProductId int,
+	Quantity int
 )
