@@ -136,9 +136,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\Home2Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\Home3Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OdersController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Context\Brand.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
@@ -224,6 +226,8 @@
     <Content Include="Content\admin\dist\img\credit\visa.png" />
     <Content Include="Content\admin\dist\img\default-150x150.png" />
     <Content Include="Content\admin\dist\img\icons.png" />
+    <Content Include="Content\admin\dist\img\logophone.png" />
+    <Content Include="Content\admin\dist\img\logoteam.png" />
     <Content Include="Content\admin\dist\img\photo1.png" />
     <Content Include="Content\admin\dist\img\photo2.png" />
     <Content Include="Content\admin\dist\img\photo3.jpg" />
@@ -2168,6 +2172,8 @@
     <Content Include="Content\images\logo-white.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logo.svg" />
+    <Content Include="Content\images\logo1.png" />
+    <Content Include="Content\images\logo2.png" />
     <Content Include="Content\images\misc\appstore.png" />
     <Content Include="Content\images\misc\payments.png" />
     <Content Include="Content\images\misc\playmarket.png" />
@@ -2316,6 +2322,11 @@
     <Content Include="Context\dbModel.edmx.diagram">
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Oders\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Oders\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Oders\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Oders\Delete.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\build-config.js" />

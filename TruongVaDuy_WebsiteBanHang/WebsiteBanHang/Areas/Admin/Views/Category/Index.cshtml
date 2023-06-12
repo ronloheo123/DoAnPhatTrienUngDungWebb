@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebsiteBanHang.Context.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh Sách Danh Mục Sản Phẩm</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Tạo Mới Đơn Hàng</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Danh Mục
+            @*Html.DisplayNameFor(model => model.Name)*@
+        </th>
+        <th>
+            Hình Ảnh
+            @*Html.DisplayNameFor(model => model.Avatar)*@
+        </th>
+        <th>
+            Hiện Trên Trang
+            @*Html.DisplayNameFor(model => model.ShowOnHomePage)*@
+        </th>
+
+        <th>
+            Bị Xóa Hay Không?
+            @*Html.DisplayNameFor(model => model.Deleted)*@
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avatar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowOnHomePage)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Deleted)
+        </td>
+ 
+        <td>
+            <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-primary">Chỉnh Sửa</a> |
+            <a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-secondary">Chi Tiết</a> |
+            <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger">Xóa</a>
+        </td>
+    </tr>
+}
+
+</table>
